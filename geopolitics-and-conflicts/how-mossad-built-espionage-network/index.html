@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>كيف بنى الموساد أخطر شبكة تجسس واغتيالات في العالم؟</title>
+    <meta name="description" content="تحليل لعمليات الموساد من اغتيال هنية وفخري زادة إلى شبكة \&quot;سايانيم\&quot; السرية. اكتشف كيف تحول الجهاز إلى آلة قتل تكنولوجية.">
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body><main class="container-xxl my-5" dir="rtl">
+    <div class="row">
+        <div class="col-lg-4">
+            <nav id="scroll-nav" class="sticky-top pt-3">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h2 class="h5 mb-0">محتويات التحليل</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#article-hero">المقدمة</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chapter-1">الثغرة الأمنية بطهران</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chapter-2">الأيديولوجية القاتلة</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chapter-3">شبكة "ساييم" العالمية</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chapter-4">التحول الرقمي</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chapter-5">دراسة حالة: اغتيال فخري زاده</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chapter-6">الإخفاقات والحدود</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#chapter-7">تحديات المستقبل</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faq-section">أسئلة شائعة</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="#conclusion">الخاتمة</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                 <section id="organization-card" class="mt-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header">
+                            <h2 id="org-heading" class="mb-0 h4">الموساد في أرقام</h2>
+                        </div>
+                        <div class="card-body">
+                            <figure class="figure d-table mx-auto">
+                              <picture>
+                                 <source 
+                                    type="image/webp"
+                                    srcset="assets/img/mossad-headquarters-aerial-view-250.webp 250w, assets/img/mossad-headquarters-aerial-view-400.webp 400w"
+                                    sizes="250px"
+                                >
+                                <img 
+                                    class="img-fluid org-logo rounded"
+                                    src="assets/img/mossad-headquarters-aerial-view-400.jpg"
+                                    srcset="assets/img/mossad-headquarters-aerial-view-250.jpg 250w, assets/img/mossad-headquarters-aerial-view-400.jpg 400w"
+                                    sizes="250px"
+                                    width="250"
+                                    height="150"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="منظر جوي لمقر الموساد الجديد شمال تل أبيب مع التوسعات الحديثة"
+                                >
+                              </picture>
+                               <figcaption class="figure-caption text-center mt-2">مقر الموساد الجديد شمال تل أبيب.</figcaption>
+                            </figure>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item"><strong>الميزانية السنوية:</strong> <span class="badge bg-primary">~3 مليار دولار</span></li>
+                                <li class="list-group-item"><strong>عدد الموظفين:</strong> <span class="badge bg-primary">~7000 موظف</span></li>
+                                <li class="list-group-item"><strong>وحدة التكنولوجيا:</strong> <span class="badge bg-info text-dark">~2000 متخصص</span></li>
+                                <li class="list-group-item address"><strong>المقر:</strong> شمال تل أبيب، إسرائيل</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </nav>
+        </div>
+        <div class="col-lg-8">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">الصفحة الرئيسية</a></li>
+                    <li class="breadcrumb-item"><a href="#">تحليلات استراتيجية</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">الموساد الإسرائيلي: تشريح آلة الاغتيالات</li>
+                </ol>
+            </nav>
+
+            <section id="article-hero" class="mb-5">
+                <div class="card shadow-sm">
+                    <figure class="figure mb-0">
+                      <picture>
+                        <source 
+                            type="image/webp"
+                            srcset="
+                                assets/img/fakhrizadeh-assassination-scene-400.webp 400w,
+                                assets/img/fakhrizadeh-assassination-scene-820.webp 820w,
+                                assets/img/fakhrizadeh-assassination-scene-1200.webp 1200w
+                            "
+                            sizes="(max-width: 991px) 100vw, 83vw"
+                        >
+                        <img 
+                            class="card-img-top img-fluid d-block"
+                            src="assets/img/fakhrizadeh-assassination-scene-820.jpg" 
+                            srcset="
+                                assets/img/fakhrizadeh-assassination-scene-400.jpg 400w,
+                                assets/img/fakhrizadeh-assassination-scene-820.jpg 820w,
+                                assets/img/fakhrizadeh-assassination-scene-1200.jpg 1200w
+                            "
+                            sizes="(max-width: 991px) 100vw, 83vw"
+                            width="820"
+                            height="400"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
+                            alt="موقع اغتيال العالم النووي محسن فخري زاده مع تحليل المشهد"
+                        >
+                      </picture>
+                      <figcaption class="figure-caption text-center p-2">مسرح عملية اغتيال العالم النووي الإيراني محسن فخري زاده.</figcaption>
+                    </figure>
+                    <div class="card-body p-4">
+                        <article aria-labelledby="main-heading">
+                            <h1 id="main-heading" class="card-title h2 mb-3">الموساد الإسرائيلي: تشريح آلة الاغتيالات في العصر الرقمي</h1>
+                            <p class="author text-muted">تحليل استراتيجي شامل لأخطر جهاز استخبارات في الشرق الأوسط</p>
+                            <h2 id="introduction" class="h4 mt-4">مقدمة: عندما يصبح الخيال العلمي واقعاً</h2>
+                            <p>في لحظة واحدة محددة من تاريخ الاستخبارات العالمية، تغيرت قواعد اللعبة إلى الأبد. <strong>27 نوفمبر 2020</strong> - التاريخ الذي شهد ولادة حقبة جديدة في فن الاغتيال السياسي. العالم النووي الإيراني <strong>د. محسن فخري زاده</strong>، الرجل الذي كان يُعتبر <strong>"أب البرنامج النووي الإيراني"</strong>، سقط في عملية لم تشهد البشرية مثيلاً لها من قبل.</p>
+                            <p>ما حدث في ذلك اليوم لم يكن مجرد اغتيال، بل كان <strong>عرضاً تكنولوجياً مذهلاً</strong> يُظهر إلى أي مدى وصلت قدرات جهاز الموساد الإسرائيلي في القرن الحادي والعشرين.</p>
+                             <blockquote class="blockquote border-end border-5 border-primary pe-3 my-4">
+                                <h3 class="h5">الاغتيال الذي أعاد تعريف المستحيل</h3>
+                                <p class="mb-0">تخيل معي هذا المشهد: <strong>مدفع آلي رشاش يزن طناً كاملاً</strong>، مُتحكم فيه عن بُعد عبر الأقمار الصناعية، مزود بتكنولوجيا الذكاء الاصطناعي المتقدمة، يتم تهريبه إلى داخل إيران <strong>قطعة بقطعة على مدار شهور</strong>، ثم يُجمع في سرية تامة، ويُشغل من مسافة <strong>ألف ميل خارج الأراضي الإيرانية</strong>.</p>
+                             </blockquote>
+                            <p>النتيجة: <strong>15 رصاصة</strong> أصابت الهدف بدقة مذهلة، بينما لم تُخدش زوجته التي كانت تجلس على بُعد سنتيمترات منه في نفس السيارة. بعدها، تم تفجير المعدات كاملة لإخفاء الأدلة. هذا التحليل سيغوص في أعماق هذه الآلة المعقدة، بدءًا من أحدث عملياتها وصولاً إلى جذورها الأيديولوجية وشبكاتها الخفية.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            
+            <article>
+                <section id="chapter-1" class="mb-5">
+                    <h2 class="h3 border-bottom pb-2 mb-3">الفصل الأول: الثغرة الأمنية التي هزت طهران</h2>
+                    <h3 class="h4">اغتيال هنية: اختراق قلب الإمبراطورية</h3>
+                    <p>إذا كان <a href="#chapter-5" class="fw-bold text-primary scroll-link" aria-expanded="false" aria-controls="chapter-5">اغتيال فخري زاده</a> قد أظهر التفوق التكنولوجي، فإن <strong>اغتيال إسماعيل هنية في أغسطس 2024</strong> كشف عن شيء أكثر رعباً: قدرة الموساد على <strong>اختراق أكثر الأماكن حصانة في العالم</strong>.</p>
+                    <figure class="figure float-sm-start me-sm-3 mb-3" style="max-width: 350px;">
+                        <picture>
+                            <source 
+                                type="image/webp"
+                                srcset="assets/img/haniyeh-tehran-guesthouse-400.webp 400w, assets/img/haniyeh-tehran-guesthouse-785.webp 785w"
+                                sizes="(max-width: 575px) 100vw, 350px"
+                            >
+                            <img 
+                                class="img-fluid rounded shadow-sm"
+                                src="assets/img/haniyeh-tehran-guesthouse-785.jpg" 
+                                srcset="assets/img/haniyeh-tehran-guesthouse-400.jpg 400w, assets/img/haniyeh-tehran-guesthouse-785.jpg 785w"
+                                sizes="(max-width: 575px) 100vw, 350px"
+                                width="350"
+                                height="200"
+                                loading="lazy"
+                                decoding="async"
+                                alt="دار الضيافة في طهران حيث تم اغتيال إسماعيل هنية مع التحصينات الأمنية"
+                            >
+                        </picture>
+                        <figcaption class="figure-caption text-center mt-2">دار الضيافة المحصنة في طهران حيث تمت العملية.</figcaption>
+                    </figure>
+                    <p>المكان: <strong>دار الضيافة التابعة للحرس الثوري الإيراني</strong> في شمال طهران. الوسيلة: حسب المصادر المتضاربة - إما <strong>عبوة ناسفة مزروعة منذ شهرين</strong> أو <strong>مقذوف دقيق وزنه 7.5 جرام</strong>. النتيجة: <strong>حملة اعتقالات واسعة</strong> طالت عشرات الضباط والمسؤولين.</p>
+                    <p class="fw-bold">السؤال المحوري: كيف تمكن جهاز استخبارات من اختراق منشأة محصنة بـ:</p>
+                    <ul>
+                        <li>نوافذ مضادة للرصاص</li>
+                        <li>منظومة دفاع جوي متطورة</li>
+                        <li>حراسة مشددة من النخبة</li>
+                        <li>أحدث أنظمة المراقبة الإلكترونية</li>
+                    </ul>
+                </section>
+
+                <section id="chapter-2" class="mb-5">
+                    <h2 class="h3 border-bottom pb-2 mb-3">الفصل الثاني: جذور الإمبراطورية - الأيديولوجية القاتلة</h2>
+                    <h3 class="h4">فلسفة بن جوريون: البقاء قبل الأخلاق</h3>
+                    <p>في <strong>عام 1955</strong>، عندما واجه الفيلسوف العبري <strong>يشعياهو ليبويتس</strong> رئيس الوزراء <strong>ديفيد بن جوريون</strong> بمسألة قتل المدنيين الفلسطينيين، جاء الرد بوضوح قاطع:</p>
+                    <div class="card bg-light border-light my-4">
+                        <div class="card-body">
+                             <blockquote class="blockquote mb-0">
+                                <p>"لا أتفق معك. من الجيد أن يكون هناك عالم مليء بالسلام والأخوة والعدل والصدق، لكن الأكثر أهمية من ذلك أن نكون كإسرائيل متواجدين فيه."</p>
+                                <footer class="blockquote-footer mt-2">ديفيد بن جوريون, <cite title="Source Title">1955</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <p>هذه الجملة الواحدة أصبحت <strong>المبدأ التأسيسي</strong> لتحويل الموساد من جهاز أمني تقليدي إلى <strong>آلة قتل عالمية منظمة</strong>. إنها فلسفة تضع <strong>البقاء فوق كل الاعتبارات الأخلاقية والقانونية</strong>.</p>
+                    
+                     <section id="howto-guide-evolution" class="my-5 howto-guide">
+                        <div class="card shadow-sm">
+                            <div class="card-header text-white bg-info">
+                                <h3 id="howto-heading-evolution" class="mb-0 h4">التطور التاريخي: من البساطة إلى التعقيد</h3>
+                            </div>
+                            <div class="card-body">
+                                <figure class="figure d-table mx-auto">
+                                  <picture>
+                                    <source 
+                                        type="image/webp"
+                                        srcset="assets/img/technological-warfare-timeline-400.webp 400w, assets/img/technological-warfare-timeline-785.webp 785w"
+                                        sizes="(max-width: 991px) 100vw, 83vw"
+                                    >
+                                    <img 
+                                        class="img-fluid rounded shadow-sm"
+                                        src="assets/img/technological-warfare-timeline-785.jpg" 
+                                        srcset="assets/img/technological-warfare-timeline-400.jpg 400w, assets/img/technological-warfare-timeline-785.jpg 785w"
+                                        sizes="(max-width: 991px) 100vw, 83vw"
+                                        width="785"
+                                        height="400"
+                                        loading="lazy"
+                                        decoding="async"
+                                        alt="خط زمني للتطور التكنولوجي في عمليات الموساد"
+                                    >
+                                  </picture>
+                                  <figcaption class="figure-caption text-center mt-2">خط زمني يوضح القفزات النوعية في قدرات الموساد.</figcaption>
+                                </figure>
+                                <div class="instruction-set mt-4">
+                                    <div class="d-flex align-items-start mb-4 howto-step">
+                                        <span class="step-counter h4 me-3">1</span>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h4 class="h5 fw-bold">المرحلة الأولى (1950-1970)</h4>
+                                            <p class="step-text task-description mb-0">عمليات فردية بسيطة تعتمد على الطرق التقليدية ونطاق جغرافي محدود.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-4 howto-step">
+                                        <span class="step-counter h4 me-3">2</span>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h4 class="h5 fw-bold">المرحلة الثانية (1970-2000)</h4>
+                                            <p class="step-text task-description mb-0">تطوير شبكات تجسس دولية وعمليات معقدة مثل "غضب الرب" لمطاردة منفذي عملية ميونخ.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-4 howto-step">
+                                        <span class="step-counter h4 me-3">3</span>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h4 class="h5 fw-bold">المرحلة الثالثة (2000-اليوم)</h4>
+                                            <p class="step-text task-description mb-0">الثورة التكنولوجية الكاملة باستخدام الذكاء الاصطناعي، الأقمار الصناعية، والعمليات الهجينة (تكنولوجية + بشرية).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section id="chapter-3" class="mb-5 howto-guide">
+                     <div class="card shadow-sm">
+                        <div class="card-header text-white bg-info">
+                            <h2 id="howto-heading-sayanim" class="mb-0 h4">الفصل الثالث: سر القوة - شبكة "ساييم" العالمية</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>واجه الموساد في بداياته معضلة حقيقية: <strong>كيف يمكن لجهاز صغير ومحدود الموارد أن ينافس عمالقة الاستخبارات العالمية؟</strong> الحل جاء من عبقرية <strong>مئير عاميت</strong>، مدير الموساد، الذي ابتكر مفهوماً ثورياً: <strong>تحويل المجتمع اليهودي العالمي إلى شبكة استخبارات خاملة</strong>.</p>
+                            <figure class="figure d-table mx-auto">
+                              <picture>
+                                <source 
+                                    type="image/webp"
+                                    srcset="assets/img/sayanim-network-global-map-400.webp 400w, assets/img/sayanim-network-global-map-785.webp 785w"
+                                    sizes="(max-width: 991px) 100vw, 83vw"
+                                >
+                                <img 
+                                    class="img-fluid rounded shadow-sm"
+                                    src="assets/img/sayanim-network-global-map-785.jpg" 
+                                    srcset="assets/img/sayanim-network-global-map-400.jpg 400w, assets/img/sayanim-network-global-map-785.jpg 785w"
+                                    sizes="(max-width: 991px) 100vw, 83vw"
+                                    width="785"
+                                    height="400"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="خريطة تفاعلية لشبكة ساييم العالمية مع توزيع العملاء النائمين"
+                                >
+                              </picture>
+                              <figcaption class="figure-caption text-center mt-2">خريطة توضيحية لانتشار شبكة "ساييم" ودورها اللوجستي.</figcaption>
+                            </figure>
+                            <div class="instruction-set mt-4">
+                                <h3 class="h5 fw-bold">تشريح شبكة ساييم:</h3>
+                                <p class="mb-3">شبكة من المتطوعين اليهود حول العالم يقدمون الدعم اللوجستي للعمليات دون طرح أسئلة.</p>
+                                <div class="d-flex align-items-start mb-4 howto-step">
+                                    <span class="step-counter h4 me-3">1</span>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4 class="h5 fw-bold">تاجر السيارات</h4>
+                                        <p class="step-text task-description mb-0">يوفر المركبات للعملاء بسرعة وسرية.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-4 howto-step">
+                                    <span class="step-counter h4 me-3">2</span>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4 class="h5 fw-bold">السمسار العقاري</h4>
+                                        <p class="step-text task-description mb-0">يقدم الملاذات الآمنة ومراكز المراقبة المؤقتة.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-4 howto-step">
+                                    <span class="step-counter h4 me-3">3</span>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4 class="h5 fw-bold">رجل الأعمال الثري</h4>
+                                        <p class="step-text task-description mb-0">يموّل العمليات الطارئة أو يوفر غطاءً تجارياً.</p>
+                                    </div>
+                                </div>
+                                 <div class="d-flex align-items-start mb-4 howto-step">
+                                    <span class="step-counter h4 me-3">4</span>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h4 class="h5 fw-bold">الطبيب والأكاديمي</h4>
+                                        <p class="step-text task-description mb-0">يقدمان الخدمات الطبية العاجلة والغطاء الأكاديمي والمعلومات.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-warning mt-4"><strong>أرقام مذهلة:</strong> تضم الشبكة عشرات الآلاف من المتطوعين في أكثر من 100 دولة، بصحائف جنائية نظيفة ومعدل كشف شبه صفري.</div>
+                            <p><strong>مقارنة عالمية:</strong> لا يوجد جهاز استخبارات في العالم يملك شبكة بهذا التنظيم والانتشار، <strong>باستثناء جهاز الاستخبارات الصيني</strong> الذي يستفيد من الجاليات الصينية عالمياً بطريقة مشابهة.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="chapter-4" class="mb-5">
+                    <h2 class="h3 border-bottom pb-2 mb-3">الفصل الرابع: عصر التحول الرقمي</h2>
+                    <h3 class="h4">ثورة يوسي كوهين (2016-2021)</h3>
+                    <p>عندما تولى <strong>يوسي كوهين</strong> إدارة الموساد، لم يكن هدفه مجرد إدارة جهاز استخبارات، بل <strong>بناء إمبراطورية تكنولوجية</strong>. رؤيته كانت واضحة: تحويل الموساد إلى <strong>قوة رئيسية في الدولة الإسرائيلية</strong> توازي في أهميتها الجيش والشاباك.</p>
+                    <figure class="figure d-table mx-auto">
+                      <picture>
+                        <source 
+                            type="image/webp"
+                            srcset="assets/img/mossad-budget-evolution-chart-400.webp 400w, assets/img/mossad-budget-evolution-chart-785.webp 785w"
+                            sizes="(max-width: 991px) 100vw, 83vw"
+                        >
+                        <img 
+                            class="img-fluid rounded shadow-sm"
+                            src="assets/img/mossad-budget-evolution-chart-785.jpg" 
+                            srcset="assets/img/mossad-budget-evolution-chart-400.jpg 400w, assets/img/mossad-budget-evolution-chart-785.jpg 785w"
+                            sizes="(max-width: 991px) 100vw, 83vw"
+                            width="785"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
+                            alt="رسم بياني متطور يوضح تطور ميزانية الموساد 2016-2024"
+                        >
+                      </picture>
+                      <figcaption class="figure-caption text-center mt-2">تطور ميزانية الموساد تحت إدارة يوسي كوهين وخلفه.</figcaption>
+                    </figure>
+                    <p><strong>الإحصائيات المذهلة:</strong></p>
+                    <ul>
+                        <li><strong>زيادة الميزانية بـ 600 مليون دولار</strong> في 3 سنوات فقط.</li>
+                        <li><strong>الوصول إلى 3 مليارات دولار</strong> إجمالي الميزانية السنوية.</li>
+                        <li><strong>توظيف 7000 موظف</strong> (مقارنة بـ 1200 في 2000).</li>
+                        <li><strong>تخصيص 2000 شخص للتكنولوجيا</strong> (ثلث القوة العاملة).</li>
+                    </ul>
+                    <p><strong>البنية التكنولوجية الجديدة:</strong> أصبح <strong>قسم التكنولوجيا أكبر وأهم قسم في الجهاز</strong>، مسؤول عن تطوير أسلحة ذكية، تقنيات الذكاء الاصطناعي، وأنظمة التشفير والحماية السيبرانية. نتج عن ذلك عمليات نوعية مثل <strong>سرقة الأرشيف النووي الإيراني (2018)</strong> واغتيال مهندسي الدرونز والصواريخ محمد الزواري وعزيز أسبر.</p>
+                    <hr class="my-4">
+                    <h3 class="h4">عهد ديفيد برنيع: رجل الظلال (2021-الحاضر)</h3>
+                    <p>المدير الحالي للموساد جلب فلسفة مختلفة: <strong>الصمت المطلق + الحركة السريعة</strong>. ابتكر هيكلية جديدة تتضمن:</p>
+                    <ol>
+                        <li><strong>فرع الهجمات الإلكترونية:</strong> لحرب سيبرانية متقدمة.</li>
+                        <li><strong>فرع البنية التحتية:</strong> لدعم لوجستي متطور.</li>
+                        <li><strong>فرع تكنولوجيا المعلومات:</strong> لمعالجة البيانات الضخمة.</li>
+                    </ol>
+                    <p>فلسفته تعتمد على حظر التعامل مع الإعلام والتحرك السريع للضرب المباشر، مع دمج متوازن بين التكنولوجيا والعنصر البشري.</p>
+                </section>
+                
+                <section id="chapter-5" class="mb-5 howto-guide">
+                    <div class="card shadow-sm">
+                        <div class="card-header text-white bg-info">
+                            <h2 id="howto-heading-fakhrizadeh" class="mb-0 h4">الفصل الخامس: دراسة حالة - عملية اغتيال فخري زاده</h2>
+                        </div>
+                        <div class="card-body">
+                            <p>بدأت العملية قبل <strong>أشهر من التنفيذ الفعلي</strong>، وشملت تخطيطاً استراتيجياً طويل المدى.</p>
+                            <figure class="figure d-table mx-auto">
+                              <picture>
+                                <source 
+                                    type="image/webp"
+                                    srcset="assets/img/remote-controlled-weapon-diagram-400.webp 400w, assets/img/remote-controlled-weapon-diagram-785.webp 785w"
+                                    sizes="(max-width: 991px) 100vw, 83vw"
+                                >
+                                <img 
+                                    class="img-fluid rounded shadow-sm"
+                                    src="assets/img/remote-controlled-weapon-diagram-785.jpg" 
+                                    srcset="assets/img/remote-controlled-weapon-diagram-400.jpg 400w, assets/img/remote-controlled-weapon-diagram-785.jpg 785w"
+                                    sizes="(max-width: 991px) 100vw, 83vw"
+                                    width="785"
+                                    height="400"
+                                    loading="lazy"
+                                    decoding="async"
+                                    alt="رسم تخطيطي للسلاح المتحكم فيه عن بُعد المستخدم في اغتيال فخري زاده"
+                                >
+                              </picture>
+                              <figcaption class="figure-caption text-center mt-2">رسم تخطيطي يوضح آلية عمل السلاح الآلي المتحكم به عن بعد.</figcaption>
+                            </figure>
+                            <div class="instruction-set mt-4">
+                                <div class="d-flex align-items-start mb-4 howto-step">
+                                    <span class="step-counter h4 me-3">1</span>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3 class="h5 fw-bold">مرحلة الاستطلاع</h3>
+                                        <p class="step-text task-description mb-0">دراسة روتين الهدف اليومي وتحليل مسارات حمايته وتحديد نقاط الضعف على مدار أشهر.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-4 howto-step">
+                                    <span class="step-counter h4 me-3">2</span>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3 class="h5 fw-bold">مرحلة التحضير</h3>
+                                        <p class="step-text task-description mb-0">تهريب المعدات قطعة بقطعة عبر شبكات معقدة وإعادة تجميعها في ورشة سرية داخل إيران.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-4 howto-step">
+                                    <span class="step-counter h4 me-3">3</span>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h3 class="h5 fw-bold">مرحلة التنفيذ</h3>
+                                        <p class="step-text task-description mb-0">تموضع السلاح في شاحنة عادية، تفعيله عن بعد، إطلاق 15 رصاصة بدقة جراحية، ثم تفجير المعدات.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="h5 mt-4">التحليل التكنولوجي:</h4>
+                            <p>العملية استخدمت مدفع رشاش آلي موجه بالأقمار الصناعية ومدعوم بذكاء اصطناعي لمعالجة التأخير الزمني، مع نظام تدمير ذاتي متكامل لإخفاء الأدلة.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="chapter-6" class="mb-5">
+                    <h2 class="h3 border-bottom pb-2 mb-3">الفصل السادس: الإخفاقات والحدود</h2>
+                    <h3 class="h4">الأسطورة مقابل الواقع</h3>
+                    <p>رغم السمعة الأسطورية، شهد الموساد <a href="#chapter-6" class="fw-bold text-primary scroll-link" aria-expanded="false" aria-controls="chapter-6">إخفاقات مدوية</a> عبر تاريخه، تثبت أنه ليس جهازاً معصوماً من الخطأ.</p>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger"><strong>حرب أكتوبر 1973:</strong> فشل كامل في توقع الحرب ومفاجأة استراتيجية تامة.</li>
+                        <li class="list-group-item list-group-item-danger"><strong>عملية طوفان الأقصى (7 أكتوبر 2023):</strong> اعتراف رسمي بالفشل في كشف التحضيرات واختراق "الحاجز الأمني الذكي".</li>
+                        <li class="list-group-item list-group-item-danger"><strong>اكتشاف شبكات التجسس:</strong> القبض على عشرات العملاء في إيران ودول عربية، مما أدى لخسارة أصول استخبارية ثمينة.</li>
+                    </ul>
+                    <p class="mt-3"><strong>القاعدة الذهبية:</strong> لا يوجد تنظيم بشري معصوم من الفشل، مهما بلغت موارده وتطوره. <strong>العنصر البشري</strong> يبقى نقطة الضعف الأساسية في أي منظومة.</p>
+                </section>
+                
+                <section id="chapter-7" class="mb-5">
+                    <h2 class="h3 border-bottom pb-2 mb-3">الفصل السابع: المستقبل - تحديات العصر الجديد</h2>
+                     <p>يواجه الموساد تحديات ناشئة قد تحد من تفوقه في المستقبل، أبرزها:</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title h6">1. التطور التكنولوجي المضاد</h4>
+                                    <p class="card-text small">تطور أنظمة الحماية السيبرانية والذكاء الاصطناعي الدفاعي لدى الخصوم.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title h6">2. تطوير قدرات المقاومة</h4>
+                                    <p class="card-text small">تعلم الخصوم من التجارب السابقة وتطوير بروتوكولات حماية جديدة.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                             <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title h6">3. التغيرات الجيوسياسية</h4>
+                                    <p class="card-text small">ظهور تحالفات إقليمية جديدة وزيادة الضغط الدبلوماسي والقانوني الدولي.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="faq-section" class="mb-5">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-warning">
+                            <h2 id="faq-heading" class="mb-0 h4">أسئلة شائعة حول الموساد</h2>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="accordion accordion-flush" id="faqAccordion">
+                                <div class="accordion-item faq-item">
+                                    <h3 class="accordion-header" id="faq-heading-1">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-1" aria-expanded="true" aria-controls="faq-collapse-1">ما هو المبدأ التأسيسي للموساد؟</button>
+                                    </h3>
+                                    <div id="faq-collapse-1" class="accordion-collapse collapse show" aria-labelledby="faq-heading-1" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">المبدأ التأسيسي للموساد، كما عبر عنه ديفيد بن جوريون، هو أن بقاء إسرائيل كدولة له الأسبقية على جميع الاعتبارات الأخلاقية والقانونية الأخرى. هذه الفلسفة تسمح للجهاز بالعمل خارج الأطر التقليدية لتحقيق أهدافه الأمنية.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item faq-item">
+                                    <h3 class="accordion-header" id="faq-heading-2">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">ما هو سر القوة اللوجستية للموساد حول العالم؟</button>
+                                    </h3>
+                                    <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">يكمن السر في <a href="#chapter-3" class="fw-bold text-primary scroll-link" aria-expanded="false" aria-controls="chapter-3">شبكة "ساييم"</a>، وهي شبكة عالمية ضخمة من المتطوعين اليهود الذين يقدمون الدعم اللوجستي (سيارات، منازل آمنة, تمويل) لعمليات الموساد بسرية تامة، مما يمنحه قدرة وصول لا مثيل لها.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item faq-item">
+                                    <h3 class="accordion-header" id="faq-heading-3">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">هل الموساد لا يفشل أبداً؟</button>
+                                    </h3>
+                                    <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">لا، على الرغم من سمعته الأسطورية، تعرض الموساد لإخفاقات كبيرة في تاريخه، أبرزها الفشل في توقع حرب أكتوبر 1973، والفشل في كشف استعدادات عملية طوفان الأقصى في 7 أكتوبر 2023، مما يؤكد أنه ليس معصومًا من الخطأ.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item faq-item">
+                                    <h3 class="accordion-header" id="faq-heading-4">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-4" aria-expanded="false" aria-controls="faq-collapse-4">هل الموساد قادر حقاً على الوصول لأي شخص في أي مكان؟</button>
+                                    </h3>
+                                    <div id="faq-collapse-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">الجواب معقد. الموساد قوي جداً ولديه إمكانيات هائلة، لكنه ليس قوة مطلقة. نجح في عمليات مذهلة لكنه فشل في أخرى حاسمة. قدرته على الوصول تعتمد على عوامل كثيرة، بما في ذلك البيئة الأمنية للهدف والقدرات الدفاعية للخصم. المعركة الحقيقية هي بين إرادتين وليست مجرد تفوق تكنولوجي.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="conclusion" class="mb-5">
+                     <h2 class="h3 border-bottom pb-2 mb-3">خاتمة: دروس وعبر</h2>
+                    <p>الموساد الإسرائيلي يمثل نموذجاً فريداً في عالم الاستخبارات، حيث <strong>الأيديولوجيا والتكنولوجيا والموارد المالية</strong> تتضافر لإنتاج آلة قتل معقدة ومتطورة.</p>
+                    <p>لكن التاريخ يُعلمنا درساً مهماً: <strong>لا توجد قوة مطلقة في هذا العالم</strong>. كل إمبراطورية مهما بلغت قوتها تحمل في طياتها بذور ضعفها.</p>
+                     <p><strong>الدروس المستفادة:</strong></p>
+                    <ol>
+                        <li><strong>التكنولوجيا سلاح ذو حدين:</strong> يمكن استخدامها للدفاع كما للهجوم.</li>
+                        <li><strong>العنصر البشري حاسم:</strong> رغم التطور التقني، يبقى الإنسان هو الحلقة الأهم.</li>
+                        <li><strong>الإرادة قوة لا تُقهر:</strong> الشعوب المقاومة قادرة على مواجهة أعقد الآلات.</li>
+                        <li><strong>التطور مستمر:</strong> ما يبدو مستحيلاً اليوم قد يصبح عادياً غداً.</li>
+                    </ol>
+                    <p class="fw-bold mt-4">السؤال الأخير المطروح: هل الموساد قادر فعلاً على الوصول لأي شخص في أي مكان في العالم؟</p>
+                    <p>الجواب ليس بسيطاً. الموساد <strong>قوي جداً</strong> لكنه <strong>ليس قوة مطلقة</strong>. لديه إمكانيات هائلة لكن له حدود واضحة. نجح في عمليات مذهلة لكنه فشل في أخرى حاسمة.</p>
+                    <p><strong>الحقيقة الأهم:</strong> المعركة ليست بين تكنولوجيا وتكنولوجيا، بل بين <strong>إرادتين</strong>. وتاريخ المنطقة يثبت أن <strong>إرادة الشعوب المقاومة</strong> قادرة على صنع المعجزات أمام أعتى الآلات العسكرية والاستخباراتية.</p>
+                </section>
+            </article>
+
+            <section id="final-cta">
+                <div class="card border-primary text-center border-2 shadow-sm">
+                    <div class="card-body p-5">
+                        <h2 class="card-title h3">هل تريد المزيد من التحليلات العميقة؟</h2>
+                        <p class="lead card-text">اكتشف تحليلاتنا الحصرية للقضايا الاستراتيجية والجيوسياسية في الشرق الأوسط والعالم.</p>
+                        <a class="btn btn-primary btn-lg mt-3" role="button" href="#">تصفح كافة التحليلات</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/bs-init.js"></script>
+</body>
+
+</html>
