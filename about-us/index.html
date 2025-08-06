@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto" lang="en" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>المخبر الاقتصادي - Mokhbir Eqtisadi</title>
+    <script>
+        (function() {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const btnToActivate = themeSwitcher.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    if (btnToActivate) {
+                        btnToActivate.classList.add('active');
+                        btnToActivate.setAttribute('aria-pressed', 'true');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <div class="d-inline-block dropdown position-fixed top-0 start-0 m-3" style="z-index:1031;"><button class="btn btn-link dropdown-toggle text-body" id="theme-switcher-button" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme"><span class="bi bi-sun-fill ms-1"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="theme-switcher-button">
+            <li><button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light"><span class="bi bi-sun-fill ms-5 opacity-50"></span> Light </button></li>
+            <li><button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark"><span class="bi bi-moon-stars-fill ms-5 opacity-50"></span> Dark </button></li>
+            <li><button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto"><span class="bi bi-circle-half ms-5 opacity-50"></span> Auto </button></li>
+        </ul>
+    </div>
+    <main class="container-xxl my-5" dir="rtl">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <header class="text-center pb-5 border-bottom mb-5">
+                    <h1 class="display-4 fw-bold">عن Ai8V Tools</h1>
+                    <p class="lead text-muted mt-3">بناء مكتبة المحتوى العربي للمستقبل، والتأكد من أن صوتنا وثقافتنا ومعرفتنا ستكون جزءًا أساسيًا من ثورة الذكاء الاصطناعي القادمة.</p>
+                    <figure class="mt-4">
+                        <blockquote class="blockquote">
+                            <p>"نحن لا نكتب فقط للبشر – بل نمهد الطريق للذكاء الاصطناعى ليخدمهم"</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer"> مهمتنا في <cite title="synclevel.com">synclevel.com</cite></figcaption>
+                    </figure>
+                </header>
+                <div class="container py-5">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-5">
+                            <lottie-player class="img-fluid lottie-welcome pb-4" src="https://assets9.lottiefiles.com/packages/lf20_PBgNop.json" loop="" hover="" aria-label="رسم متحرك يوضح تحول البحث من قوائم إلى حوار" speed="0.8" preload="metadata" role="img"></lottie-player>
+                        </div>
+                        <div class="col-lg-7"><span class="badge rounded-pill text-primary-emphasis bg-primary-subtle px-3 py-2 mb-3">⚡ التحول في سلوك البحث</span>
+                            <h2 class="fw-bold mb-3">عصر الإجابات الفورية</h2>
+                            <p class="text-muted">القاعدة القديمة كانت "اكتب للبشر، لا لمحركات البحث". لكن سلوك البشر أنفسهم قد تغير. المستخدم اليوم لا يريد فقط "نتائج"، بل يريد "إجابات" فورية، ويعتمد بشكل متزايد على أدوات الذكاء الاصطناعي للحصول عليها.</p>
+                            <p class="fw-semibold">المشكلة؟ الذكاء الاصطناعي لا يخترع المعرفة. هو يعيد تدوير المحتوى الموجود. إذا كان المحتوى العربي ضعيفًا وغير منظم، فستظل إجاباته ضعيفة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-center bg-body-tertiary py-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8"><span class="text-primary d-block display-1 bi bi-cpu-fill mb-3" aria-hidden="true"></span>
+                                <h2 class="display-4 fw-bold">نحن لا نكتب للبشر فقط، بل نمهد الطريق للذكاء الاصطناعي ليخدمهم.</h2>
+                                <p class="lead text-muted mt-3"> في Ai8V و Synclevel، نحن لا نبني مجرد أدوات، بل نصمم "بنية تحتية" لمستقبل المحتوى العربي في عصر البحث الذكي. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="bg-body-tertiary container-fluid py-5">
+                    <div class="container">
+                        <div id="aboutMissionCarousel" class="carousel slide" data-bs-interval="false" data-bs-ride="false" aria-labelledby="vision-carousel-heading">
+                            <div class="text-bg-secondary carousel-indicators"><button class="active text-bg-info" type="button" data-bs-target="#aboutMissionCarousel" data-bs-slide-to="0" aria-current="true" aria-label="الشريحة 1: سياستنا الفكرية"></button><button class="text-bg-info" type="button" data-bs-target="#aboutMissionCarousel" data-bs-slide-to="1" aria-label="الشريحة 2: التحول في سلوك المستخدم"></button><button class="text-bg-info" type="button" data-bs-target="#aboutMissionCarousel" data-bs-slide-to="2" aria-label="الشريحة 3: التحدي الذي نواجهه"></button><button class="text-bg-info" type="button" data-bs-target="#aboutMissionCarousel" data-bs-slide-to="3" aria-label="الشريحة 4: الفرصة الحقيقية"></button><button class="text-bg-info" type="button" data-bs-target="#aboutMissionCarousel" data-bs-slide-to="4" aria-label="الشريحة 5: قيمتنا المضافة"></button></div>
+                            <div class="text-light-emphasis text-bg-secondary carousel-inner py-4">
+                                <div class="carousel-item active" role="group" aria-label="الشريحة 1 من 5">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-11 col-md-8 col-lg-6">
+                                            <div class="card h-100 text-light-emphasis bg-primary-subtle border-primary text-bg-info border-2 shadow-sm">
+                                                <div class="card-body p-4 p-md-5">
+                                                    <h2 class="text-center h4 card-title">🧠 سياستنا الفكرية الجديدة</h2>
+                                                    <p class="card-text mt-3">الفكرة الشائعة "اكتب للبشر، لا لمحركات البحث" كانت مناسبة لعصرها. اليوم، نقدم فكرة أكثر تطورًا: <strong>"الكتابة للبشر عبر تمكين الآلة"</strong>. نحن نبني بنية تحتية للمحتوى العربي تتناغم مع الذكاء الاصطناعي.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" role="group" aria-label="الشريحة 2 من 5">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-11 col-md-8 col-lg-6">
+                                            <div class="card h-100 text-light-emphasis bg-primary-subtle border-primary text-bg-info border-2 shadow-sm">
+                                                <div class="card-body p-4 p-md-5">
+                                                    <h2 class="text-center h4 card-title">⚡ التحول فى سلوك المستخدم</h2>
+                                                    <p class="card-text mt-3">المستخدم العربي لا يُعرف بالقراءة المطولة، لكنه أصبح يعتمد يوميًا على أدوات الذكاء الاصطناعي للحصول على إجابات فورية. هذا يتطلب محتوى مهيأً لتلبية هذه الحاجة بدقة وسرعة.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" role="group" aria-label="الشريحة 3 من 5">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-11 col-md-8 col-lg-6">
+                                            <div class="card h-100 text-light-emphasis bg-primary-subtle border-primary text-bg-info border-2 shadow-sm">
+                                                <div class="card-body p-4 p-md-5">
+                                                    <h2 class="text-center h4 card-title">🧩 التحدي الذي نواجهه</h2>
+                                                    <p class="card-text mt-3">الذكاء الاصطناعي لا يخترع المعلومة، بل يعتمد على محتوى مُنظم، مُؤرشف، ومُهيأ. بدون محتوى عربي عالي الجودة، ستظل إجاباته قاصرة أو غير دقيقة في سياقنا الثقافي.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" role="group" aria-label="الشريحة 4 من 5">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-11 col-md-8 col-lg-6">
+                                            <div class="card h-100 text-light-emphasis bg-primary-subtle border-primary text-bg-info border-2 shadow-sm">
+                                                <div class="card-body p-4 p-md-5">
+                                                    <h2 class="text-center h4 card-title">✅ الفرصة الحقيقية</h2>
+                                                    <ul class="list-unstyled mt-3">
+                                                        <li class="d-flex align-items-start mb-2"><span class="me-2">✳️</span><span>نصنع مرجعاً عربياً قابلاً للفهم السريع.</span></li>
+                                                        <li class="d-flex align-items-start mb-2"><span class="me-2">✳️</span><span>نهيئ المحتوى للظهور في نتائج البحث الذكية (SGE).</span></li>
+                                                        <li class="d-flex align-items-start"><span class="me-2">✳️</span><span>نغذي النماذج اللغوية بمحتوى عربي دقيق.</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" role="group" aria-label="الشريحة 5 من 5">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="col-11 col-md-8 col-lg-6">
+                                            <div class="card h-100 text-light-emphasis bg-primary-subtle border-primary text-bg-info border-2 shadow-sm">
+                                                <div class="card-body text-center d-flex flex-column justify-content-center p-4 p-md-5">
+                                                    <h2 class="h4 card-title">🎯 قيمتنا المضافة</h2>
+                                                    <p class="fs-5 card-text mt-3">نحن لا نزيد وصول المحتوى فقط، بل نُعيد تعريف <strong>كيف يُفهم ويُستخدم</strong> ضمن النظام البيئي الجديد للذكاء الاصطناعي.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><button class="carousel-control-prev" type="button" data-bs-target="#aboutMissionCarousel" data-bs-slide="next"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">الشريحة السابقة</span></button><button class="carousel-control-next" type="button" data-bs-target="#aboutMissionCarousel" data-bs-slide="prev"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">الشريحة التالية</span></button>
+                        </div>
+                        <p class="lead text-center text-muted mt-3">مهمتنا هي بناء مكتبة المحتوى العربي للمستقبل، والتأكد من أن صوتنا وثقافتنا ومعرفتنا ستكون جزءًا أساسيًا من ثورة الذكاء الاصطناعي القادمة.</p>
+                    </div>
+                </section>
+                <section id="vision-section" class="my-5">
+                    <h2 class="fw-bold text-center h3 mb-4">🧠 رؤيتنا: بنية تحتية للمحتوى العربي</h2>
+                    <p>رؤيتنا تتجاوز كوننا مجرد "أداة لتحسين محركات البحث" (SEO)؛ نحن نرى أنفسنا كمشروع لبناء "بنية تحتية للمحتوى العربي" في عصر الذكاء الاصطناعي.</p>
+                    <p>الفكرة الشائعة ("اكتب للبشر، لا لمحركات البحث") كانت صالحة لعصرها، لكننا اليوم نقدم سياسة فكرية جديدة تتناغم مع المستقبل: <strong>"الكتابة للبشر عبر تمكين الآلة"</strong>.</p>
+                </section>
+                <div class="container-fluid bg-body-tertiary py-5">
+                    <div class="container">
+                        <div class="row text-center justify-content-center">
+                            <div class="col-lg-8"><span class="badge rounded-pill text-success-emphasis bg-success-subtle px-3 py-2 mb-3">✅ فرصتنا</span>
+                                <h2 class="fw-bold mb-4">بناء مكتبة المحتوى العربي للمستقبل</h2>
+                                <p class="lead text-muted">مهمتنا بسيطة وواضحة: نحن نحول المحتوى المرئي والصوتي العربي (الكنز المدفون) إلى مقالات مُهندسة معماريًا. كل مقال ننتجه ليس مجرد نص، بل هو "وحدة بيانات" (Data Unit) مصممة خصيصًا لـ:</p>
+                            </div>
+                        </div>
+                        <div class="row text-center mt-5 g-4">
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4"><span class="text-primary d-block display-4 bi bi-google mb-3" aria-hidden="true"></span>
+                                        <h3 class="fw-bold h5">تهيئة المحتوى لـ SGE</h3>
+                                        <p class="text-muted small">نضمن أن يكون المحتوى منظمًا بشكل يسهل على تجربة البحث التوليدية (SGE) فهمه وعرضه.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4"><span class="text-info d-block display-4 bi bi-robot mb-3" aria-hidden="true"></span>
+                                        <h3 class="fw-bold h5">تغذية نماذج اللغة (LLMs)</h3>
+                                        <p class="text-muted small">نوفر مادة خام عالية الجودة باللغة العربية لتتدرب عليها نماذج الذكاء الاصطناعي المستقبلية.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body p-4"><span class="text-success d-block display-4 bi bi-book-half mb-3" aria-hidden="true"></span>
+                                        <h3 class="fw-bold h5">صناعة مرجع عربي موثوق</h3>
+                                        <p class="text-muted small">نساهم في بناء مكتبة محتوى عربي دقيقة وموثوقة يمكن للجميع الوصول إليها.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="card-title h4">⚡ التحول فى سلوك المستخدم</h3>
+                                <p class="card-text">المستخدم العربي لا يُعرف بالقراءة المطولة، لكنه أصبح يعتمد بشكل متزايد على أدوات الذكاء الاصطناعي مثل ChatGPT للحصول على إجابات فورية وموجزة. هذا السلوك الجديد يتطلب محتوى مهيأً لتلبية هذه الحاجة.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="card-title h4">🧩 التحدى الذي نواجهه</h3>
+                                <p class="card-text">الذكاء الاصطناعي لا يخترع المعلومة من العدم، بل يعتمد بشكل أساسي على محتوى منظم ومؤرشف ومهيأ مسبقاً. بدون هذا المحتوى عالي الجودة، ستظل إجاباته قاصرة أو غير دقيقة في السياق العربي.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="bg-light-subtle my-5 p-4 rounded-3 border" id="opportunity-section">
+                    <h2 class="fw-bold text-center h3 mb-4">✅ الفرصة الحقيقية</h2><blockquote class="blockquote">
+                    <p class="mb-0">عندما نحول محتوى الفيديو غير القابل للأرشفة، مثل مقاطع YouTube، إلى مقالات منظمة وقابلة للتهيئة، فإننا نفتح آفاقاً جديدة:</p>
+                </blockquote>
+                    <ul class="list-unstyled fs-5 mt-3">
+                        <li class="d-flex align-items-start mb-2"><span class="me-2">✳️</span><span>نصنع مرجعاً عربياً قابلاً للفهم السريع من قبل الآلات والبشر على حد سواء.</span></li>
+                        <li class="d-flex align-items-start mb-2"><span class="me-2">✳️</span><span>نهيئ المحتوى للظهور داخل نتائج البحث الذكية (SGE) التي أصبحت جزءاً أساسياً من تجربة البحث.</span></li>
+                        <li class="d-flex align-items-start"><span class="me-2">✳️</span><span>نغذي النماذج اللغوية الكبيرة (LLMs) بمحتوى عربي متماسك ودقيق، مما يحسن من قدرتها على خدمة المستخدم العربي.</span></li>
+                    </ul>
+                </section>
+                <section id="value-section">
+                    <div class="card border-primary text-center border-2 shadow-sm">
+                        <div class="card-body p-5">
+                            <h2 class="card-title h3">🎯 قيمتنا المضافة</h2>
+                            <h3 class="fw-bold my-3 h2">نحن لا نريد الوصول فقط، بل نعيد تعريف القيمة.</h3>
+                            <p class="lead text-muted"> في Ai8V و Synclevel، نؤمن بأن المستقبل لا يكمن فقط في إنشاء المزيد من المحتوى، بل في هندسة المحتوى الموجود ليصبح أكثر ذكاءً، وفائدة، وتأثيرًا. نحن ندعوك لتكون جزءًا من هذه المهمة لإعادة تعريف كيفية فهم واستخدام المحتوى العربي في العصر الرقمي الجديد. </p>
+                            <p class="lead card-text">نحن لا نحاول فقط زيادة وصول المحتوى. نحن نُعيد تعريف <strong>كيف يُفهم ويُستخدم المحتوى العربى</strong> داخل النظام البيئي الجديد المبني على الذكاء الاصطناعي.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/lottie-player.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/theme-switcher.js"></script>
+</body>
+
+</html>
