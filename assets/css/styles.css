@@ -3,3 +3,13 @@
   margin-right: auto;
 }
 
+#subscribe-form {
+  max-width: 600px;
+}
+
+.lottie-welcome {
+  max-width: 350px;
+  height: auto;
+  margin: 0 auto;
+}
+
